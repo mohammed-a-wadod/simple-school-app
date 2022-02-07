@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Row Action :: <strong>{{action}}</strong></h1>
+<div mat-dialog-content>
+    <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
+        <input placeholder="First Name" matInput [(ngModel)]="student.firstName">
+    </mat-form-field>
+    <mat-form-field *ngIf="action != 'Delete'; else elseTemplate">
+        <input placeholder="Last Name" matInput [(ngModel)]="student.lastName">
+    </mat-form-field>
+    <ng-template #elseTemplate>
+        Sure to delete <b>{{student.firstName}}</b>?
+    </ng-template>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="doAction()">{{action}}</button>
+    <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancel</button>
+</div>
