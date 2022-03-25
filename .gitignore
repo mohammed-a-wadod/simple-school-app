@@ -25,3 +25,4 @@ hs_err_pid*
 /school-backend/target/
 /school-backend/school-demo.iml
 /.idea/
+.DS_Store
